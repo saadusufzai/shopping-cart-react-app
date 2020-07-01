@@ -159,14 +159,14 @@ export default function Header() {
     <div className={classes.grow}>
       <AppBar className={classes.AppBar} position="fixed">
         <Toolbar>
-          <Typography color='secondary' className={classes.title} variant="h6" noWrap>
+          <Typography color='#fff' className={classes.title} variant="h6" noWrap>
             MiTech Store
           </Typography>
 
-          <Button className={classes.btn} color="secondary">HOME</Button>
-          <Button className={classes.btn} color="secondary">CONTACT</Button>
-          <Button className={classes.btn} color="secondary">CART</Button>
-          <Button className={classes.btn} color="secondary">MY REPO</Button>
+          <Button className={classes.btn} color="inherit">HOME</Button>
+          <Button className={classes.btn} color="inherit">CONTACT</Button>
+          <Button className={classes.btn} color="inherit">CART</Button>
+          <Button className={classes.btn} color="inherit">MY REPO</Button>
 
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>

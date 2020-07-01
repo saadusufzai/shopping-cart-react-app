@@ -20,14 +20,39 @@ export default function cart() {
                             <h4>1</h4>
                             <h4>HeadPhones</h4>
                              <span className={classes.minus}>-</span>
-                             <h4 className={classes.qty}>1</h4>
+                             <div className={classes.qty}>1</div>
                              <span className={classes.plus}>+</span>
                             <h4>192000</h4>
                         </div>
                     </Paper>
                 </Grid>
                 <Grid xs={3}  item >
-                    <Paper square  className={classes.box1}></Paper>
+                    <Paper square  className={classes.box1}>
+                        <div className={classes.strip}>
+                            <div className={classes.header}>
+                                <h4>TOTAL</h4>
+                            </div>
+                        </div>    
+                            <div className={classes.price}>
+                                <div className={classes.endPrice}>
+                                    <div>Price</div>
+                                    <div>96000</div>
+                                </div>
+                                
+                                <div className={classes.discount}>
+                                    <div>Discount</div>
+                                    <div> -3000</div>
+                                </div>
+                                
+                                <hr/>
+                                <div className={classes.endTotal}>
+                                    <div>Grand Total</div>
+                                    <div>192000</div>
+                                </div>
+
+                            </div>
+                        
+                    </Paper>
                 </Grid>
                 
             </Grid>
