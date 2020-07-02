@@ -10,13 +10,14 @@ import {
   Grid,
 } from "@material-ui/core";
 
-import img1 from "../../images/head-phone-1.jpg";
 import { makeStyles } from "@material-ui/core/styles";
 import { dummyData } from "./dummydata";
 
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
+  root: {
+    padding:0
+  },
   card: {
     maxWidth: 345,
   },
@@ -63,12 +64,14 @@ export default function Products() {
                 <Typography noWrap gutterBottom variant="h5" component="h2">
                   {e.name}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography align='justify' variant="body2" color="textSecondary" component="p">
                   Open workspaces are great for collaboration, but they can also
-                  be noisy. Take control of your acoustic environment with Zone
-                  Wireless, the Bluetooth® headset specifically designed for
-                  busy workspaces. Equally awesome for talking and music.
+                  be noisy. Take control of your Keyboard environment 
                 </Typography>
+              </CardContent>
+              <CardContent className={styles.root} >
+                <Typography  variant={"h6"} align='center'>PRICE</Typography>
+               <Typography align='center'>Rs.{e.price}   </Typography>
               </CardContent>
             </CardActionArea>
             <CardActions >
