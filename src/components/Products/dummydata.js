@@ -1,4 +1,4 @@
-export const dummyData= [
+export const products= [
 
     {
       id:1,
@@ -57,3 +57,5 @@ export const dummyData= [
       slug:"Bloody-B975-Light-Strike",
     },
   ];
+
+

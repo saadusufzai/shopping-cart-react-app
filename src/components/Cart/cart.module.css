@@ -4,7 +4,7 @@
 
 .box1{
     
-    height: 205px;
+    height: auto;
 }
 
 .strip{
@@ -27,11 +27,16 @@
     position: relative;
     
 }
+.name{
+    width: 30%;
+   
+}
 .qty{
     
     border: 1px solid grey;
     border-radius: 4px;
-    padding:8px
+    padding:8px;
+    margin-right: 100px;
 }
 .minus{
     cursor: pointer;

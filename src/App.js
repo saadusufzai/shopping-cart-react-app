@@ -1,20 +1,26 @@
 import React from 'react';
-
+import {BrowserRouter, Router, Routes,Route} from 'react-router-dom'
 import './App.css';
 import Home from './components/Home';
 import Header from './components/Header';
-import Cart from './components/Cart/cart'
-import {GlobalProvider} from './components/Context/GlobalContext'
 
+import Carts from './components/Cart/cart'
+import {GlobalProvider} from './components/Context/GlobalContext'
+ 
 
 function App() {
   return (
    
    <GlobalProvider>
-      <Home />
-      <Header />
-      <Cart/>
-      </GlobalProvider>  
+     <BrowserRouter>
+         <Routes>
+          <Route path='/' element={<Home /> }/> 
+         
+          </Routes>                 
+                          
+                          
+      </BrowserRouter>
+    </GlobalProvider>  
   
   );
 }

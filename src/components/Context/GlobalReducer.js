@@ -3,8 +3,7 @@ export default (state, action)=>{
         case 'ADD_TO_CART':
             return{
                 ...state,
-                quantity: state.quantity +1,
-                id:state.id
+                cart:[action.payload.product , ...state.cart]
             }
             default:return state
     }
