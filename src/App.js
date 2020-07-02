@@ -8,6 +8,7 @@ import Cart from './components/Cart/cart'
 function App() {
   return (
    <>
+      <Home />
       <Header />
       <Cart/>
    </>
