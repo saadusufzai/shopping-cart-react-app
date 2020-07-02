@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import {
   CardActionArea,
   CardContent,
@@ -12,6 +12,8 @@ import {
 
 import { makeStyles } from "@material-ui/core/styles";
 import { dummyData } from "./dummydata";
+import {GlobalContext} from '../Context/GlobalContext'
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -40,15 +42,18 @@ const useStyles = makeStyles((theme) => ({
   
 }));
 
-console.log(dummyData.map((e) => e.id));
+
 
 export default function Products() {
   const styles = useStyles();
-
+  const {addItem} = useContext(GlobalContext) 
+  const addToCart= (id)=>{
+    addItem(id)
+  }
   return (
     <div>
       <Grid container spacing={5} className={styles.root}>
-      {dummyData.map((e)=> 
+      {dummyData.map((e)=>  
         <Grid xs={12} sm={5} md={3} item>
           <Card className={styles.card}>
             <CardActionArea>
@@ -76,7 +81,7 @@ export default function Products() {
             </CardActionArea>
             <CardActions >
               <div className={styles.action}>
-                <Button className={styles.btn} size="small" color="primary">
+                <Button onClick={()=> addToCart(e.id)} className={styles.btn} size="small" color="primary">
                 Add to Cart
               </Button>
               </div>
