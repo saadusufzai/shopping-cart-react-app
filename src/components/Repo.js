@@ -5,7 +5,7 @@ const Repo = () => {
   return (
     <div className='repo'>
       <h1> MUHAMMAD SAAD ASLAM</h1>
-      <Link  to='https://github.com/saadusufzai/shopping-cart-react-app' >GIT HUB REPOSITORY </Link>
+      <Link target='blank'  href='https://github.com/saadusufzai/shopping-cart-react-app' >GIT HUB REPOSITORY </Link>
     </div>
   );
 };
