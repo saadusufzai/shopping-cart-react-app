@@ -91,3 +91,12 @@
     padding: 25px 0;
     margin: 10px;
 }
+
+.del{
+    position: absolute;
+    left: 10%;
+}
+.del:hover{
+   cursor: pointer;
+    color: red;
+}

@@ -9,9 +9,8 @@ import { GlobalContext } from '../Context/GlobalContext'
 const Carts = () => {
     
   const {cart} = useContext(GlobalContext) 
-  const totalPrice =  cart.reduce((acc, value)=>acc+value.price,0)
-
-    
+ 
+  const totalPrice =  (cart.reduce((acc, value)=>acc+value.price,0))
     return (
         
         <div className={classes.body}>

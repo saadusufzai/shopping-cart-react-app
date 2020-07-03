@@ -22,6 +22,12 @@ export default (state, action)=>{
                 ...state,
                    cart: [...state.cart]
             }
+        case 'REMOVE':
+                
+            return{ 
+                ...state,
+                   cart: state.cart.filter((e)=>e.id !== action.payload)
+            }
             
             default:return state
     }

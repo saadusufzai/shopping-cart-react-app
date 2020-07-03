@@ -38,6 +38,12 @@ export const GlobalProvider = ({ children }) =>{
             payload:id
         })
     }
+    function remove(id){
+        dispatch({
+            type:'REMOVE',
+            payload:id
+        })
+    }
   
     
 
@@ -49,7 +55,8 @@ export const GlobalProvider = ({ children }) =>{
             cart:state.cart,
             addItem,
             plus,
-            minus
+            minus,
+            remove
             
 
         }}>

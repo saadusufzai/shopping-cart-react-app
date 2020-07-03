@@ -1,21 +1,29 @@
 import React, {useContext} from "react";
 import classes from "./cart.module.css";
 import {GlobalContext} from '../Context/GlobalContext'
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+
 
 const CartItems = ({ value, index }) => {
-  const {plus,minus} = useContext(GlobalContext)
+  const {plus,minus,remove} = useContext(GlobalContext)
   
   const {id} = value
   const handleMinus = ()=>{
+    value.quantity <= 1 ? remove(id):
     minus(id)
   }
   const handlePlus = ()=>{
       plus(id)
   }
+  const handleDel =()=>{
+    remove(id)
+  }
 
   return (
     <div className={classes.product}>
+      
       <h4>{index + 1}</h4>
+      < DeleteForeverIcon onClick={handleDel} className={classes.del} />
       <h4 className={classes.name}>{value.name}</h4>
       <div >
        <span className={classes.qty}>{value.quantity}</span>
