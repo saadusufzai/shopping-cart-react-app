@@ -30,6 +30,13 @@ export default (state, action)=>{
                    cart: state.cart.filter((e)=>e.id !== action.payload),
                     
             }
+        case 'CHECKOUT':
+                
+            return{ 
+                ...state,
+                   cart: [],
+                    
+            }
             
             default:return state
     }

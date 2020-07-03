@@ -100,3 +100,21 @@
    cursor: pointer;
     color: red;
 }
+.checkout{
+    text-align: center;
+    padding: 10px ;
+    background-color: #282828;
+    color:#fff ;
+}
+.checkout:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+.messege{
+    text-align: center;
+    line-height: 2;
+}
+.messege a{
+    text-decoration:  none;
+    color :rgba(49, 49, 160, 0.561)
+}

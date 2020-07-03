@@ -45,6 +45,12 @@ export const GlobalProvider = ({ children }) =>{
             payload:id
         })
     }
+    function checkout(){
+        dispatch({
+            type:'CHECKOUT',
+            
+        })
+    }
   
     
 
@@ -58,6 +64,7 @@ export const GlobalProvider = ({ children }) =>{
             plus,
             minus,
             remove,
+            checkout
             
             
 

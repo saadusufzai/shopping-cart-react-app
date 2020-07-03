@@ -3,13 +3,20 @@ import { Grid,Paper } from '@material-ui/core'
 import CartItem from './CartItems'
 import classes from './cart.module.css'
 import { GlobalContext } from '../Context/GlobalContext'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 
 const Carts = () => {
     
-  const {cart} = useContext(GlobalContext) 
- 
+  const {cart,checkout} = useContext(GlobalContext) 
+  let messege = <h1 className={classes.messege}>YOUR CART IS EMPTY <br/> GO TO <Link to='/'>HOME</Link> FOR SHOPPING</h1>
+  const navigate = useNavigate()
+  const handelCheckout = ()=>{
+    
+    checkout()
+    navigate('/')
+  }
   const totalPrice =  (cart.reduce((acc, value)=>acc+value.price * value.quantity,0))
     return (
         
@@ -25,8 +32,8 @@ const Carts = () => {
                             <h4>Price</h4>
                         </div>
                         </div>
-
-                       {cart.map((value,i)=>(
+                        {totalPrice == 0 ? messege : 
+                         cart.map((value,i)=>(
                            <CartItem key={value.id} index={i} value={value}/>
                        ))}
                     </Paper>
@@ -58,9 +65,9 @@ const Carts = () => {
                                     <div>Grand Total</div>
                                     <div>{totalPrice}</div>
                                 </div>
-
+                                
                             </div>
-                        
+                            <div onClick={handelCheckout} className={classes.checkout}>CHECKOUT</div>
                     </Paper>
                 </Grid>
                 
