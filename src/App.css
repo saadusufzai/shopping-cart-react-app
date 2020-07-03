@@ -1,0 +1,13 @@
+.repo{
+    margin-top: 10%;
+    text-align: center;
+}
+.repo a{
+    font-size: 24px;
+    border-bottom: 2px solid blue;
+    
+}
+.repo a:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
