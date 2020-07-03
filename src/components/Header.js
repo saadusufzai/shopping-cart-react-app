@@ -7,10 +7,11 @@ import Typography from "@material-ui/core/Typography";
 import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Button } from "@material-ui/core";
 import { GlobalContext } from "./Context/GlobalContext";
+import {Link} from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -80,6 +81,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header() {
+  let navigate = useNavigate()
   const {cart} = useContext(GlobalContext)
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -87,10 +89,6 @@ export default function Header() {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
@@ -132,8 +130,8 @@ export default function Header() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
+      <MenuItem onClick={()=> navigate('cart')}>
+        <IconButton   aria-label="show 4 new mails" color="inherit">
         <Badge badgeContent={cart.length} color="secondary">
                 <ShoppingCartIcon />
               </Badge>
@@ -150,15 +148,14 @@ export default function Header() {
           <Typography color='#fff' className={classes.title} variant="h6" noWrap>
             MiTech Store
           </Typography>
-
-          <Button className={classes.btn} color="inherit">HOME</Button>
-          <Button className={classes.btn} color="inherit">CONTACT</Button>
-          <Button className={classes.btn} color="inherit">CART</Button>
-          <Button className={classes.btn} color="inherit">MY REPO</Button>
+          
+          <Button onClick={()=> navigate('/')}  className={classes.btn} color="inherit">HOME</Button>
+          <Button onClick={()=> navigate('cart')} className={classes.btn} color="inherit">CART</Button>
+          <Button onClick={()=> navigate('repo')} className={classes.btn} color="inherit">MY REPO</Button>
 
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show  new mails" color="inherit">
+            <IconButton onClick={()=> navigate('cart')} aria-label="show  new mails" color="inherit">
               <Badge badgeContent={cart.length} color="secondary">
                 <ShoppingCartIcon />
               </Badge>
