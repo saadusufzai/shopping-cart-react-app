@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -10,6 +10,7 @@ import Menu from "@material-ui/core/Menu";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Button } from "@material-ui/core";
+import { GlobalContext } from "./Context/GlobalContext";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -79,6 +80,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header() {
+  const {cart} = useContext(GlobalContext)
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -148,6 +150,8 @@ export default function Header() {
       </MenuItem>
     </Menu>
   );
+
+  console.log(cart.length)
   return (
     <div className={classes.grow}>
       <AppBar className={classes.AppBar} position="fixed">
@@ -163,17 +167,13 @@ export default function Header() {
 
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
+            <IconButton aria-label="show  new mails" color="inherit">
+              <Badge badgeContent={cart.length} color="secondary">
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>
 
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+           
           </div>
           <div className={classes.sectionMobile}>
             <IconButton

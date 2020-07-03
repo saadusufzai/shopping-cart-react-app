@@ -6,10 +6,12 @@ import { GlobalContext } from '../Context/GlobalContext'
 
 
 
-
 const Carts = () => {
-    const { cart } = useContext(GlobalContext);
-    console.log(cart.map((e) =>e.id))
+    
+  const {cart} = useContext(GlobalContext) 
+  const totalPrice =  cart.reduce((acc, value)=>acc+value.price,0)
+
+    
     return (
         
         <div className={classes.body}>
@@ -26,7 +28,7 @@ const Carts = () => {
                         </div>
 
                        {cart.map((value,i)=>(
-                           <CartItem index={i} value={value}/>
+                           <CartItem key={value.id} index={i} value={value}/>
                        ))}
                     </Paper>
                 </Grid>
@@ -39,19 +41,23 @@ const Carts = () => {
                         </div>    
                             <div className={classes.price}>
                                 <div className={classes.endPrice}>
-                                    <div>Price</div>
-                                    <div>96000</div>
+                                    <div>Total Price</div>
+                                    <div>{totalPrice}</div>
                                 </div>
                                 
                                 <div className={classes.discount}>
                                     <div>Discount</div>
-                                    <div> -3000</div>
+                                    <div> 0</div>
+                                </div>
+                                <div className={classes.discount}>
+                                    <div>Sales TAX</div>
+                                    <div> 0</div>
                                 </div>
                                 
                                 <hr/>
                                 <div className={classes.endTotal}>
                                     <div>Grand Total</div>
-                                    <div>192000</div>
+                                    <div>{totalPrice}</div>
                                 </div>
 
                             </div>

@@ -8,7 +8,7 @@ const ProductList = () => {
     const {products} = useContext(GlobalContext)
 
     return (
-        <Grid container spacing={5} > 
+        <Grid container spacing={3} > 
             {products.map((e)=>(
                 <Products key={e.id} product={e} id={e.id} name={e.name} price={e.price} imgUrl={e.imgUrl} />
             ))}

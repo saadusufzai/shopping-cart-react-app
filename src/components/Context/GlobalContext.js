@@ -24,6 +24,8 @@ export const GlobalProvider = ({ children }) =>{
             payload:product
         })
     }
+  
+    
 
    
 
@@ -32,6 +34,7 @@ export const GlobalProvider = ({ children }) =>{
             products:state.products,
             cart:state.cart,
             addItem,
+            
             
 
         }}>

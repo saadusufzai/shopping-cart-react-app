@@ -5,6 +5,12 @@ export default (state, action)=>{
                 ...state,
                 cart:[action.payload.product , ...state.cart]
             }
+        case 'TOTAL_PRICE':
+            return{
+                ...state,
+                totalPrice:state.cart.reduce((acc,value)=> acc+value.price,0)
+            }
+            
             default:return state
     }
     
