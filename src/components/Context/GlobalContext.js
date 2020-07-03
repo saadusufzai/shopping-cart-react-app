@@ -1,8 +1,9 @@
-import React, {createContext, useReducer} from 'react'
+import React, {useState,createContext, useReducer} from 'react'
 import GlobalReducer from './GlobalReducer'
 import { products } from '../Products/dummydata'
 
 const initialState = {
+    
     products,
     cart:[
         
@@ -16,9 +17,9 @@ export const GlobalContext = createContext(initialState)
 
 
 export const GlobalProvider = ({ children }) =>{
-
+    
     let [state, dispatch] = useReducer(GlobalReducer, initialState)
-
+    
 
     function addItem(product){
         dispatch({
@@ -56,7 +57,8 @@ export const GlobalProvider = ({ children }) =>{
             addItem,
             plus,
             minus,
-            remove
+            remove,
+            
             
 
         }}>

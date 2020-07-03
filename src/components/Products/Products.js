@@ -40,20 +40,23 @@ const useStyles = makeStyles((theme) => ({
 export default function Products({ product,id, name, price, imgUrl }) {
   const styles = useStyles();
 
-  const { addItem, cart ,plus } = useContext(GlobalContext);
+  const { addItem, cart ,plus, } = useContext(GlobalContext);
   const [btnText, setBtnText]  = useState('ADD TO CART')
+  
 
   const addToCart = () => {
     if( cart.find((e)=>e.id===product.id)) {
       
-      plus(id) 
+      plus(id)
+
     }
-    else{
-      setBtnText('ADD MORE'); 
+    else{  
     product.quantity = 1
     addItem({product});
+    setBtnText('ADD MORE')
     }
   };
+  
   
   
   return (
