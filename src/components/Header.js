@@ -10,8 +10,8 @@ import Menu from "@material-ui/core/Menu";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Button } from "@material-ui/core";
 import { GlobalContext } from "./Context/GlobalContext";
-import {Link} from 'react-router-dom'
-import { Outlet, useNavigate } from 'react-router-dom';
+
+import {  useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   grow: {

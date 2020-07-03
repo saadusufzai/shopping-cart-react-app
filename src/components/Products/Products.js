@@ -11,7 +11,6 @@ import {
 } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
-import { dummyData } from "./dummydata";
 import { GlobalContext } from "../Context/GlobalContext";
 
 const useStyles = makeStyles((theme) => ({

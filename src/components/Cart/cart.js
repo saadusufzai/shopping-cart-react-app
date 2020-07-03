@@ -32,7 +32,7 @@ const Carts = () => {
                             <h4>Price</h4>
                         </div>
                         </div>
-                        {totalPrice == 0 ? messege : 
+                        {totalPrice === 0 ? messege : 
                          cart.map((value,i)=>(
                            <CartItem key={value.id} index={i} value={value}/>
                        ))}
