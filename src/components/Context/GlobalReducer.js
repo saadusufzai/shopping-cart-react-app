@@ -3,12 +3,24 @@ export default (state, action)=>{
         case 'ADD_TO_CART':
             return{
                 ...state,
-                cart:[action.payload.product , ...state.cart]
+                cart:[action.payload.product , ...state.cart],
+                
             }
-        case 'TOTAL_PRICE':
-            return{
+        case 'INCREASE':
+
+            state.cart[state.cart.findIndex(e => e.id === action.payload)].quantity++
+                
+            return{ 
                 ...state,
-                totalPrice:state.cart.reduce((acc,value)=> acc+value.price,0)
+                   cart: [...state.cart]
+            }
+        case 'DECREASE':
+
+            state.cart[state.cart.findIndex(e => e.id === action.payload)].quantity--
+                
+            return{ 
+                ...state,
+                   cart: [...state.cart]
             }
             
             default:return state

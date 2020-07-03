@@ -4,7 +4,9 @@ import { products } from '../Products/dummydata'
 
 const initialState = {
     products,
-    cart:[]
+    cart:[
+        
+    ]
 
 } 
     
@@ -24,6 +26,18 @@ export const GlobalProvider = ({ children }) =>{
             payload:product
         })
     }
+    function plus(id){
+        dispatch({
+            type:'INCREASE',
+            payload:id
+        })
+    }
+    function minus(id){
+        dispatch({
+            type:'DECREASE',
+            payload:id
+        })
+    }
   
     
 
@@ -34,7 +48,8 @@ export const GlobalProvider = ({ children }) =>{
             products:state.products,
             cart:state.cart,
             addItem,
-            
+            plus,
+            minus
             
 
         }}>

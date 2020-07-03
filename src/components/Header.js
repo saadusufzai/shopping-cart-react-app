@@ -134,24 +134,15 @@ export default function Header() {
     >
       <MenuItem>
         <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <ShoppingCartIcon />
-          </Badge>
+        <Badge badgeContent={cart.length} color="secondary">
+                <ShoppingCartIcon />
+              </Badge>
         </IconButton>
         <p>My Cart</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
       </MenuItem>
     </Menu>
   );
 
-  console.log(cart.length)
   return (
     <div className={classes.grow}>
       <AppBar className={classes.AppBar} position="fixed">
@@ -183,6 +174,7 @@ export default function Header() {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
+              <Badge badgeContent={cart.length} color="secondary"></Badge>
               <ShoppingCartIcon />
             </IconButton>
           </div>

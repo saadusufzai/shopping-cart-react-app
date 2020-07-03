@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useState } from "react";
 import {
   CardActionArea,
   CardContent,
@@ -37,17 +37,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Products({ product, name, price, imgUrl }) {
+export default function Products({ product,id, name, price, imgUrl }) {
   const styles = useStyles();
 
-  const { addItem } = useContext(GlobalContext);
+  const { addItem, cart ,plus } = useContext(GlobalContext);
+  const [btnText, setBtnText]  = useState('ADD TO CART')
 
   const addToCart = () => {
+    if( cart.find((e)=>e.id===product.id)) {
+      
+      plus(id) 
+    }
+    else{
+      setBtnText('ADD MORE'); 
+    product.quantity = 1
     addItem({product});
+    }
   };
-
-
-
+  
+  
   return (
     <>
       <Grid xs={12} sm={5} md={3} item>
@@ -90,7 +98,7 @@ export default function Products({ product, name, price, imgUrl }) {
                 size="small"
                 color="primary"
               >
-                Add to Cart
+                {btnText}
               </Button>
             </div>
           </CardActions>

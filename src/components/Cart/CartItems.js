@@ -3,12 +3,14 @@ import classes from "./cart.module.css";
 import {GlobalContext} from '../Context/GlobalContext'
 
 const CartItems = ({ value, index }) => {
-
-  const minus = ()=>{
-    
+  const {plus,minus} = useContext(GlobalContext)
+  
+  const {id} = value
+  const handleMinus = ()=>{
+    minus(id)
   }
-  const plus = ()=>{
-
+  const handlePlus = ()=>{
+      plus(id)
   }
 
   return (
@@ -16,10 +18,10 @@ const CartItems = ({ value, index }) => {
       <h4>{index + 1}</h4>
       <h4 className={classes.name}>{value.name}</h4>
       <div >
-        <span className={classes.qty}>1</span>
+       <span className={classes.qty}>{value.quantity}</span>
         <div>
-          <span onClick={minus} className={classes.minus}>-</span>
-          <span onClick={plus} className={classes.plus}>+</span>
+          <span onClick={handleMinus} className={classes.minus}>-</span>
+          <span onClick={handlePlus} className={classes.plus}>+</span>
         </div>
       </div>
 
