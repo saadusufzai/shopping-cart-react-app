@@ -72,7 +72,7 @@ export default function Products({ product,id, name, price, imgUrl }) {
               title="Logitec Zone Wireless"
             />
             <CardContent>
-              <Typography noWrap gutterBottom variant="h5" component="h2">
+              <Typography style={{marginTop:'10px'}} align='center' noWrap  variant="h5" component="h2">
                 {name}
               </Typography>
               <Typography
@@ -81,15 +81,14 @@ export default function Products({ product,id, name, price, imgUrl }) {
                 color="textSecondary"
                 component="p"
               >
-                Open workspaces are great for collaboration, but they can also
-                be noisy. Take control of your Keyboard environment
+                
               </Typography>
             </CardContent>
             <CardContent className={styles.root}>
               <Typography variant={"h6"} align="center">
                 PRICE
               </Typography>
-              <Typography align="center">Rs.{price} </Typography>
+              <Typography align="center">{price}&euro;</Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
