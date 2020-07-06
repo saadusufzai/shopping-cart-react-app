@@ -15,7 +15,7 @@ const useStyles = makeStyles(({
     },
     footer:{
         display:'block',
-        width:400,
+        width:300,
         margin:'0 auto',
         padding:20,
         },
