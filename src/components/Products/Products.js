@@ -18,7 +18,8 @@ const useStyles = makeStyles((theme) => ({
     padding: 0,
   },
   card: {
-    maxWidth: 345,
+    maxWidth: 445,
+    margin:'0 auto'
   },
   img: {
     width: "250px",
@@ -34,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "grey",
     width: "100%",
   },
+  
 }));
 
 export default function Products({ product,id, name, price, imgUrl }) {
@@ -60,16 +62,16 @@ export default function Products({ product,id, name, price, imgUrl }) {
   
   return (
     <>
-      <Grid xs={12} sm={5} md={3} item>
+      <Grid xs={12} sm={6} md={3} item>
         <Card className={styles.card}>
           <CardActionArea>
             <CardMedia
               className={styles.img}
               component="img"
-              alt="Logitec Zone Wireless"
+              alt="Shoe Store"
               height="200"
               image={imgUrl}
-              title="Logitec Zone Wireless"
+              title="Shoe Store"
             />
             <CardContent>
               <Typography style={{marginTop:'10px'}} align='center' noWrap  variant="h5" component="h2">

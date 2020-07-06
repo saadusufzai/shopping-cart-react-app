@@ -22,7 +22,7 @@ const Carts = () => {
         
         <div className={classes.body}>
             <Grid container spacing={2}>
-                <Grid  xs={9}  item >
+                <Grid  xs={totalPrice === 0? 12:12} sm={totalPrice === 0? 12:8} md={totalPrice === 0? 12:9} item >
                     <Paper square  className={classes.box1}>
                        <div className={classes.strip}>
                         <div className={classes.header}>
@@ -38,38 +38,40 @@ const Carts = () => {
                        ))}
                     </Paper>
                 </Grid>
-                <Grid xs={3}  item >
-                    <Paper square  className={classes.box1}>
-                        <div className={classes.strip}>
-                            <div className={classes.header}>
-                                <h4>TOTAL</h4>
+                {totalPrice === 0 ? '':
+                <Grid className='total' xs={12} sm={4} md={3} item >
+                <Paper square  className={classes.box1}>
+                    <div className={classes.strip}>
+                        <div className={classes.header}>
+                            <h4>TOTAL</h4>
+                        </div>
+                    </div>    
+                        <div className={classes.price}>
+                            <div className={classes.endPrice}>
+                                <div>Total Price</div>
+                                <div>{totalPrice}</div>
                             </div>
-                        </div>    
-                            <div className={classes.price}>
-                                <div className={classes.endPrice}>
-                                    <div>Total Price</div>
-                                    <div>{totalPrice}</div>
-                                </div>
-                                
-                                <div className={classes.discount}>
-                                    <div>Discount</div>
-                                    <div> 0</div>
-                                </div>
-                                <div className={classes.discount}>
-                                    <div>Sales TAX</div>
-                                    <div> 0</div>
-                                </div>
-                                
-                                <hr/>
-                                <div className={classes.endTotal}>
-                                    <div>Grand Total</div>
-                                    <div>{totalPrice}</div>
-                                </div>
-                                
+                            
+                            <div className={classes.discount}>
+                                <div>Discount</div>
+                                <div> 0</div>
                             </div>
-                            <div onClick={handelCheckout} className={classes.checkout}>CHECKOUT</div>
-                    </Paper>
-                </Grid>
+                            <div className={classes.discount}>
+                                <div>Sales TAX</div>
+                                <div> 0</div>
+                            </div>
+                            
+                            <hr/>
+                            <div className={classes.endTotal}>
+                                <div>Grand Total</div>
+                                <div>{totalPrice}</div>
+                            </div>
+                            
+                        </div>
+                        <div onClick={handelCheckout} className={classes.checkout}>CHECKOUT</div>
+                </Paper>
+            </Grid> }
+                
                 
             </Grid>
         </div>

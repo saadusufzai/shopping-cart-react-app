@@ -1,5 +1,5 @@
 .body{
-    margin-top: 7%;
+    margin-top: 65px;
 }
 
 .box1{
@@ -117,4 +117,27 @@
 .messege a{
     text-decoration:  none;
     color :rgba(49, 49, 160, 0.561)
+}
+
+@media(max-width:900px){
+    .qty{
+        margin-right: 50px;
+    }
+}
+@media(max-width:960px){
+    .qty{
+        margin-right: 60px;
+    }
+}
+@media(max-width:780px){
+    .qty{
+        padding:3px;
+        margin-right: 50px;
+    }
+}
+@media(max-width:600px){
+    .qty{
+        padding:3px;
+        margin-right: 50px;
+    }
 }

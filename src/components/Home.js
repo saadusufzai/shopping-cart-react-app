@@ -1,7 +1,7 @@
 import React from "react";
 import ProductList from "./Products/ProductList";
 import { makeStyles } from "@material-ui/core/styles";
-
+import logo from '../images/logo.png'
 import {
   
   Typography,
@@ -14,7 +14,13 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 345,
   },
 home: {
+    
     marginTop:'7%'
+},
+logo:{
+  width:320,
+  display:'block',
+  margin:'auto'
 },
 welcome:{
 marginBottom:'2%'
@@ -26,7 +32,7 @@ export default function Home() {
 
   return (
     <div className={styles.home}>
-        <Typography className={styles.welcome} align='center'  variant={"h4"}>WELCOME TO MiTECH STORE</Typography>
+      <img className={styles.logo} src={logo} alt='logo'/>
         <ProductList/>
     </div>
   );

@@ -11,6 +11,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Button } from "@material-ui/core";
 import { GlobalContext } from "./Context/GlobalContext";
 
+
 import {  useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({

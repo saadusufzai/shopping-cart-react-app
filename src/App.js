@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Repo from './components/Repo';
 import Cart from "./components/Cart/cart";
 import { GlobalProvider } from "./components/Context/GlobalContext";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path='cart' element={<Cart />}></Route>
                 <Route path='repo' element={<Repo />}></Route>
               </Routes>
+              <Footer/>
           </Router>  
         </GlobalProvider>
           
