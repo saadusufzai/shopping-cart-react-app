@@ -15,12 +15,13 @@ const useStyles = makeStyles((theme) => ({
   },
 home: {
     
-    marginTop:'7%'
+    marginTop:'3%'
 },
 logo:{
   width:320,
   display:'block',
-  margin:'auto'
+  margin:'auto',
+  marginTop:10
 },
 welcome:{
 marginBottom:'2%'

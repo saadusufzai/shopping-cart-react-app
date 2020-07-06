@@ -35,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "grey",
     width: "100%",
   },
+  mainBox:{
+    marginBottom:30
+  }
   
 }));
 
@@ -62,7 +65,7 @@ export default function Products({ product,id, name, price, imgUrl }) {
   
   return (
     <>
-      <Grid xs={12} sm={6} md={3} item>
+      <Grid className={styles.mainBox} xs={12} sm={6} md={3} item>
         <Card className={styles.card}>
           <CardActionArea>
             <CardMedia

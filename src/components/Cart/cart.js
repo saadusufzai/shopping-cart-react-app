@@ -22,15 +22,19 @@ const Carts = () => {
         
         <div className={classes.body}>
             <Grid container spacing={2}>
-                <Grid  xs={totalPrice === 0? 12:12} sm={totalPrice === 0? 12:8} md={totalPrice === 0? 12:9} item >
+                <Grid  xs={12} sm={totalPrice === 0? 12:8} md={totalPrice === 0? 12:9} item >
                     <Paper square  className={classes.box1}>
                        <div className={classes.strip}>
-                        <div className={classes.header}>
-                            <h4>#</h4>
-                            <h4>Product</h4>
-                            <h4>Quantity</h4>
-                            <h4>Price</h4>
-                        </div>
+                        <ul className={classes.header}>
+                            <li>#</li>
+                            <li>Product</li>
+                            <div className={classes.qtyTop} >
+                                <div ></div>
+                                <li>Quantity</li>
+                                <div></div>
+                            </div>
+                            <li>Price</li>
+                        </ul>
                         </div>
                         {totalPrice === 0 ? messege : 
                          cart.map((value,i)=>(

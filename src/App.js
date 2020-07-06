@@ -19,8 +19,8 @@ function App() {
                 <Route path='cart' element={<Cart />}></Route>
                 <Route path='repo' element={<Repo />}></Route>
               </Routes>
-              <Footer/>
           </Router>  
+          <Footer/>
         </GlobalProvider>
           
          

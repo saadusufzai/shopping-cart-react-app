@@ -78,7 +78,13 @@ const useStyles = makeStyles((theme) => ({
   },
   AppBar: {
     backgroundColor: "#282828",
+    
   },
+  digit:{
+    marginTop:'10px',
+    fontSize:'12px'
+  }
+ 
 }));
 
 export default function Header() {
@@ -133,7 +139,7 @@ export default function Header() {
     >
       <MenuItem onClick={()=> navigate('cart')}>
         <IconButton   aria-label="show 4 new mails" color="inherit">
-        <Badge badgeContent={cart.length} color="secondary">
+        <Badge  badgeContent={cart.length} color="secondary">
                 <ShoppingCartIcon />
               </Badge>
         </IconButton>
@@ -147,7 +153,7 @@ export default function Header() {
       <AppBar className={classes.AppBar} position="fixed">
         <Toolbar>
           <Typography color='#fff' className={classes.title} variant="h6" noWrap>
-            MiTech Store
+            MiShoe Store
           </Typography>
           
           <Button onClick={()=> navigate('/')}  className={classes.btn} color="inherit">HOME</Button>
@@ -156,13 +162,12 @@ export default function Header() {
 
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton onClick={()=> navigate('cart')} aria-label="show  new mails" color="inherit">
-              <Badge badgeContent={cart.length} color="secondary">
-                <ShoppingCartIcon />
+          
+            <IconButton onClick={()=> navigate('cart')} aria-label="show  new cart" color="inherit">
+              <Badge className={classes.badge}  badgeContent={cart.length} color="secondary">
+              <span className={classes.digit}>{cart.length}</span><ShoppingCartIcon /> 
               </Badge>
             </IconButton>
-
-           
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
@@ -172,8 +177,8 @@ export default function Header() {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-              <Badge badgeContent={cart.length} color="secondary"></Badge>
-              <ShoppingCartIcon />
+              <Badge className={classes.badge} badgeContent={cart.length} color="secondary"></Badge>
+              <span className={classes.digit}>{cart.length}</span><ShoppingCartIcon />
             </IconButton>
           </div>
         </Toolbar>
