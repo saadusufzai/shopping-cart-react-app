@@ -2,11 +2,6 @@ import React from "react";
 import ProductList from "./Products/ProductList";
 import { makeStyles } from "@material-ui/core/styles";
 import logo from '../images/logo.png'
-import {
-  
-  Typography,
-  
-} from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({

@@ -5,10 +5,10 @@ import footerLogo from '../images/footerLogo.png'
 const useStyles = makeStyles(({
     root:{
         
-        position: '',
+        position: 'bottom',
         bottom: '0',
         width: '100%',
-        height: '2.5rem',  
+        
         backgroundColor:'#282828',
         height:'200px',
 
