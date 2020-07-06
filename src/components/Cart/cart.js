@@ -25,16 +25,16 @@ const Carts = () => {
                 <Grid  xs={12} sm={totalPrice === 0? 12:8} md={totalPrice === 0? 12:9} item >
                     <Paper square  className={classes.box1}>
                        <div className={classes.strip}>
-                        <ul className={classes.header}>
-                            <li>#</li>
-                            <li>Product</li>
-                            <div className={classes.qtyTop} >
-                                <div ></div>
-                                <li>Quantity</li>
-                                <div></div>
-                            </div>
-                            <li>Price</li>
-                        </ul>
+                            <ul className={classes.header}>
+                                <li>#</li>
+                                <li>Product</li>
+                                <div className={classes.qtyTop} >
+                                    <div ></div>
+                                    <li>Quantity</li>
+                                    <div></div>
+                                </div>
+                                <li>Price</li>
+                            </ul>
                         </div>
                         {totalPrice === 0 ? messege : 
                          cart.map((value,i)=>(
