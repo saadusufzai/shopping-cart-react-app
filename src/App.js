@@ -6,7 +6,6 @@ import Header from "./components/Header";
 import Repo from './components/Repo';
 import Cart from "./components/Cart/cart";
 import { GlobalProvider } from "./components/Context/GlobalContext";
-import Footer from "./components/Footer";
 import SingleProduct from "./components/SingleProduct";
 
 function App() {

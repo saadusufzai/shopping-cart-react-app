@@ -1,4 +1,4 @@
-import React, { useContext,useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   CardActionArea,
   CardContent,
@@ -19,8 +19,9 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     maxWidth: 445,
-    margin:'0 auto'
+    margin: "0 auto",
   },
+
   img: {
     width: "250px",
     margin: "0 auto",
@@ -35,39 +36,40 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "grey",
     width: "100%",
   },
-  mainBox:{
-    marginBottom:30
-  }
-  
+  mainBox: {
+    marginBottom: 30,
+  },
 }));
 
-export default function Products({ product,id, name, price, imgUrl }) {
+export default function Products({ product, id, name, price, imgUrl }) {
   const styles = useStyles();
 
-  const { addItem, cart ,plus, } = useContext(GlobalContext);
-  const [btnText, setBtnText]  = useState('ADD TO CART')
-  
+  const { addItem, cart, plus } = useContext(GlobalContext);
+  const [btnText, setBtnText] = useState("ADD TO CART");
 
   const addToCart = () => {
-    if( cart.find((e)=>e.id===product.id)) {
-      
-      plus(id)
-
-    }
-    else{  
-    product.quantity = 1
-    addItem({product});
-    setBtnText('ADD MORE')
+    if (cart.find((e) => e.id === product.id)) {
+      plus(id);
+    } else {
+      product.quantity = 1;
+      addItem({ product });
+      setBtnText("ADD MORE");
     }
   };
-  
-  
-  
+
+  const hoverIn = () => {};
+
+  const hoverOut = () => {};
+
   return (
     <>
       <Grid className={styles.mainBox} xs={12} sm={6} md={3} item>
-        <Card className={styles.card}>
-          <CardActionArea>
+        <Card
+          onMouseEnter={hoverIn()}
+          onMouseLeave={hoverOut()}
+          className={styles.card}
+        >
+          <CardActionArea className={styles.actionArea}>
             <CardMedia
               className={styles.img}
               component="img"
@@ -77,7 +79,13 @@ export default function Products({ product,id, name, price, imgUrl }) {
               title="Shoe Store"
             />
             <CardContent>
-              <Typography style={{marginTop:'10px'}} align='center' noWrap  variant="h5" component="h2">
+              <Typography
+                style={{ marginTop: "10px" }}
+                align="center"
+                noWrap
+                variant="h5"
+                component="h2"
+              >
                 {name}
               </Typography>
               <Typography
@@ -85,9 +93,7 @@ export default function Products({ product,id, name, price, imgUrl }) {
                 variant="body2"
                 color="textSecondary"
                 component="p"
-              >
-                
-              </Typography>
+              ></Typography>
             </CardContent>
             <CardContent className={styles.root}>
               <Typography variant={"h6"} align="center">
