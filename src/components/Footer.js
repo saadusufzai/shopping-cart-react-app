@@ -5,8 +5,7 @@ import footerLogo from '../images/footerLogo.png'
 const useStyles = makeStyles(({
     root:{
         
-        position: 'bottom',
-        bottom: '0',
+        
         width: '100%',
         
         backgroundColor:'#282828',
@@ -33,12 +32,12 @@ const useStyles = makeStyles(({
 }))
 
 
-const Footer = () => {
+const Footer = ({height}) => {
     const classes = useStyles()
-
+    console.log(height + 'height')
     return (
       
-        <div className={classes.root}>
+        <div style={{marginTop:`${height}vh`}} className={classes.root}>
             <div>
                 <img className={classes.footer} src={footerLogo} alt={footerLogo} />
             </div>

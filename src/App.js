@@ -7,6 +7,7 @@ import Repo from './components/Repo';
 import Cart from "./components/Cart/cart";
 import { GlobalProvider } from "./components/Context/GlobalContext";
 import Footer from "./components/Footer";
+import SingleProduct from "./components/SingleProduct";
 
 function App() {
   return (
@@ -16,11 +17,12 @@ function App() {
           <Header/>
               <Routes>
                 <Route path='/' element={<Home />}></Route>
+                <Route path='/:slug' element={<SingleProduct />}></Route>
+                
                 <Route path='cart' element={<Cart />}></Route>
                 <Route path='repo' element={<Repo />}></Route>
               </Routes>
           </Router>  
-          <Footer/>
         </GlobalProvider>
           
          

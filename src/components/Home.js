@@ -2,7 +2,7 @@ import React from "react";
 import ProductList from "./Products/ProductList";
 import { makeStyles } from "@material-ui/core/styles";
 import logo from '../images/logo.png'
-
+import Footer from '../components/Footer'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,6 +30,7 @@ export default function Home() {
     <div className={styles.home}>
       <img className={styles.logo} src={logo} alt='logo'/>
         <ProductList/>
+        <Footer />
     </div>
   );
 }

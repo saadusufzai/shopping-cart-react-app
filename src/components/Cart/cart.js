@@ -4,6 +4,7 @@ import CartItem from './CartItems'
 import classes from './cart.module.css'
 import { GlobalContext } from '../Context/GlobalContext'
 import { Link, useNavigate } from 'react-router-dom'
+import Footer from '../Footer'
 
 
 
@@ -75,9 +76,8 @@ const Carts = () => {
                         <div onClick={handelCheckout} className={classes.checkout}>CHECKOUT</div>
                 </Paper>
             </Grid> }
-                
-                
             </Grid>
+            <Footer/>
         </div>
     )
 }
